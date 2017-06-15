@@ -149,7 +149,7 @@ export const FinishButton = ({ params, confirmButtonHandler }) => {
                 <div className="nav-right">
                     <span className="nav-item">
                         <button className={"button " + (that.props.getReviewResult ? 'is-success': 'is-primary')}
-                            disabled={!that.props.getReviewResult}
+                            disabled={!that.props.getReviewResult || that.props.getPostMessage !== ''}
                             onClick={confirmButtonHandler}>
                             Confirm</button>
                     </span>

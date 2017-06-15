@@ -37,6 +37,14 @@ export default class Review extends Component {
             .then((res) => {
             let msg = 'Successfully posted!'
             this.props.that.props.posted(msg);
+            //clear the store after few seconds.    
+            setTimeout(() => {
+                this.props.that.props.userCustomInfo({ email: '', phoneNo: '' });
+                this.props.that.props.userLocation('');
+                this.props.that.props.doReview(false);
+                this.props.that.props.posted('');
+                this.props.that.props.wizardSteps(1);
+            }, 2000);
         });
     }
     render() {
